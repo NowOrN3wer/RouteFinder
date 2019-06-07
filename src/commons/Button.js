@@ -9,7 +9,7 @@ class Button extends Component {
             <TouchableOpacity
                 style={{ width: (width * 0.71), 
                 height: (height * 0.07),
-                backgroundColor: '#53008C',
+                backgroundColor: '#0f52ba',
                 marginTop: 20, 
                 borderRadius: 10,
                 justifyContent: 'center',

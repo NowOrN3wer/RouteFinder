@@ -71,11 +71,11 @@ class Form extends Component {
     render() {
         return (
             <ImageBackground
-            source={require('../RouteFinder_SourceAssets/img/bg.png')}
+            source={require('../RouteFinder_SourceAssets/img/rfbckgrnd.jpg')}
             style={{ width, height, alignItems: 'center', justifyContent: 'center' }}
             >
                 
-                <Image source={require('../RouteFinder_SourceAssets/img/logo.png')} />
+                <Image style={styles.appicon} source={require('../RouteFinder_SourceAssets/img/AppIcon.png')} />
                 
                 {this.renderSection(
                     this.state.startLoc,
@@ -99,8 +99,6 @@ class Form extends Component {
             })} 
             text={strings.createplan} 
             />
-                
-
             </ImageBackground>           
         );
     }
@@ -116,6 +114,9 @@ const styles = {
         alignItems: 'center',
         paddingLeft: 10,
         paddingRight: 10
+    },
+    appicon: {
+        borderRadius: 20
     }
 };
 

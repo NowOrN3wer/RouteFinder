@@ -5,6 +5,7 @@ import RNGooglePlaces from 'react-native-google-places';
 import { Actions } from 'react-native-router-flux';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
+// eslint-disable-next-line max-len
 import { View, Text, Dimensions, ListView, StyleSheet, Image, TextInput, FlatList, SectionList, ScrollView } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker, MyCustomMarkerView } from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
@@ -55,16 +56,16 @@ class Step extends Component {
       return (
         
         <ScrollView>       
-          <Text style={styles.sectiontitle}> ROUTE DETAILS </Text> 
+          <Text style={styles.sectiontitle}> {strings.routedetailsheader} </Text> 
           <View style={styles.section}>
-              <Text style={styles.viewheader}>From: {this.obj.legs.start_address}</Text>
-              <Text style={styles.viewheader}>To: {this.obj.legs.end_address}</Text>
-              <Text style={styles.viewtext}>Departure Time: {this.obj.legs.departure_time.text}</Text>
-              <Text style={styles.viewtext}>Arrival Time: {this.obj.legs.arrival_time.text}</Text>
-              <Text style={styles.viewtext}>Total duration: {this.obj.legs.duration.text}</Text>
-              <Text style={styles.viewtext}>Total distance: {this.obj.legs.distance.text}</Text>
-              <Text style={styles.viewtext}>Minimum Total Cost: {this.obj.totalCostMin}₺</Text>
-              <Text style={styles.viewtext}>Maximum Tocal Cost: {this.obj.totalCostMax}₺</Text>
+              <Text style={styles.viewheader}>{strings.departureheader}{this.obj.legs.start_address}</Text>
+              <Text style={styles.viewheader}>{strings.arrivalheader}{this.obj.legs.end_address}</Text>
+              <Text style={styles.viewtext}>{strings.departureTimeheader}{this.obj.legs.departure_time.text}</Text>
+              <Text style={styles.viewtext}>{strings.arrivalTimeheader}{this.obj.legs.arrival_time.text}</Text>
+              <Text style={styles.viewtext}>{strings.totaldurationheader}{this.obj.legs.duration.text}</Text>
+              <Text style={styles.viewtext}>{strings.totaldistanceheader}{this.obj.legs.distance.text}</Text>
+              <Text style={styles.viewtext}>{strings.totalMinCostheader}{this.obj.totalCostMin}₺</Text>
+              <Text style={styles.viewtext}>{strings.totalMaxCostheader}{this.obj.totalCostMax}₺</Text>
           </View>
           <SectionList
             sections={this.obj.stepList}
@@ -72,8 +73,8 @@ class Step extends Component {
             renderItem={({ item }) => 
             <View style={styles.section}>
               <Text style={styles.viewheader}>{ item.html_instructions }</Text> 
-              <Text style={styles.viewtext}>Duration: { item.distance.text }</Text>
-              <Text style={styles.viewtext}>Distance: { item.duration.text }</Text> 
+              <Text style={styles.viewtext}>{strings.distanceheader}{ item.distance.text }</Text>
+              <Text style={styles.viewtext}>{strings.durationheader}{ item.duration.text }</Text> 
             </View>
             }
             keyExtractor={(item, index) => index}
@@ -109,7 +110,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
     borderWidth: 1,
-    borderColor: 'blue'
+    borderColor: '#48a70b'
   },
   loadingScreen: {
     justifyContent: 'center',

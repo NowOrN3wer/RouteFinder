@@ -46,11 +46,7 @@ class Map extends Component {
             region: {
                 latitude: startLongLat[0],
                 longitude: startLongLat[1],
-                latitudeDelta: 0.30,
-                longitudeDelta: 0.30,
                 routes: null,
-                mylatitude: coords.latitude,
-                mylongitude: coords.longitude 
             },
             selectedTab: 'steps'
         });
@@ -94,14 +90,12 @@ class Map extends Component {
                                     ...this.state.region,
                                     latitude: coords.latitude,
                                     longitude: coords.longitude,
-                                    longitudeDelta: 0.15,
-                                    latitudeDelta: 0.15,
                                     mylatitude: coords.latitude,
                                     mylongitude: coords.longitude 
                                 },
                                 
                             });
-                        }, 500);         
+                        }, 100);         
                     });
                 }, // success
 				() => reject(), // fail
@@ -145,11 +139,13 @@ class Map extends Component {
                             coordinate={origin}
                             title={strings.startlocation}
                             description={startLoc}
+                            pinColor={'green'}
                         />
                         <Marker
                             coordinate={destination}
                             title={strings.destlocation}
                             description={destLoc}
+                            pinColor={'green'}
                         />
 
                         {
@@ -175,7 +171,7 @@ class Map extends Component {
                             apikey={GOOGLE_MAPS_APIKEY} 
                             mode="transit"
                             strokeWidth={5}
-                            strokeColor="red"
+                            strokeColor="green"
                             optimizeWaypoints={true}
                             ourInputFunction={this.handleInputFunction}
                         />        
@@ -185,17 +181,17 @@ class Map extends Component {
                     <View><Text>{ (this.state.currCoord !== null) ? this.state.currCoord.coords.latitude + ', ' + this.state.currCoord.coords.longitude : 'boş' }</Text></View>
                     <SwitchButton
                         onValueChange={(val) => this.setState({ activePage: val })}      // this is necessary for this component
-                        text1 = 'Route'                        // optional: first text in switch button --- default ON
-                        text2 = 'Places'                       // optional: second text in switch button --- default OFF
-                        switchWidth = {400}                 // optional: switch width --- default 44
-                        switchHeight = {44}                 // optional: switch height --- default 100
+                        text1 = 'Route'                     // optional: first text in switch button --- default ON
+                        text2 = 'Places'                    // optional: second text in switch button --- default OFF
+                        switchWidth = {width - 2}           // optional: switch width --- default 44
+                        switchHeight = {height / 16}        // optional: switch height --- default 100
                         switchdirection = 'rtl'             // optional: switch button direction ( ltr and rtl ) --- default ltr
-                        switchBorderRadius = {100}          // optional: switch border radius --- default oval
+                        switchBorderRadius = {10}           // optional: switch border radius --- default oval
                         switchSpeedChange = {500}           // optional: button change speed --- default 100
                         switchBorderColor = '#d4d4d4'       // optional: switch border color --- default #d4d4d4
                         switchBackgroundColor = '#fff'      // optional: switch background color --- default #fff
                         btnBorderColor = '#00a4b9'          // optional: button border color --- default #00a4b9
-                        btnBackgroundColor = '#00bcd4'      // optional: button background color --- default #00bcd4
+                        btnBackgroundColor = '#0f52ba'      // optional: button background color --- default #00bcd4
                         fontColor = '#b1b1b1'               // optional: text font color --- default #b1b1b1
                         activeFontColor = '#fff'            // optional: active font color --- default #fff
                     />                

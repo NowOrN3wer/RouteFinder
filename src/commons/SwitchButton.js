@@ -41,9 +41,12 @@ import {
     Text,
     TouchableOpacity,
     StyleSheet,
-    Animated
+    Animated,
+    Dimensions
 } from 'react-native';
 import PropTypes from 'prop-types';
+
+const { width, height } = Dimensions.get('window');
 
 export default class SwitchButton extends Component {
 

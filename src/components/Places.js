@@ -10,8 +10,8 @@ export default class Places extends Component {
             <View>
                 <FlatList
                 data={this.props.places}
-                keyExtractor={(item,key) => item.id.toString()}
-                renderItem={({ item }) => <PlacesItem map={this.props.map} item={item} />}
+                keyExtractor={(item, key) => item.id}
+                renderItem={({ item }) => <PlacesItem map={this.props.map} key={item.id} item={item} />}
                 ItemSeparatorComponent={() => <View style={{ marginRight: 10 }} />}
                 />
             </View>
