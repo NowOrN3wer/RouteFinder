@@ -96,21 +96,23 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       textAlign: 'center',
       //backgroundColor: 'red',
-      fontSize: 15
+      fontSize: 15,
+      color: 'white'
   },
   viewtext: {
       fontSize: 13,
       //backgroundColor: 'green',
+      color: 'white'
   },
   section: {
     margin: 5,
     marginLeft: 4,
     marginRight: 4,
-    backgroundColor: '#FFF',
-    borderRadius: 10,
+    backgroundColor: '#809c13',
+    borderRadius: 5,
     padding: 10,
-    borderWidth: 1,
-    borderColor: '#48a70b'
+    borderWidth: 3,
+    borderColor: '#a1c45a'
   },
   loadingScreen: {
     justifyContent: 'center',

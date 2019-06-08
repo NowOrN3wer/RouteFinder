@@ -139,13 +139,13 @@ class Map extends Component {
                             coordinate={origin}
                             title={strings.startlocation}
                             description={startLoc}
-                            pinColor={'green'}
+                            pinColor={'#809c13'}
                         />
                         <Marker
                             coordinate={destination}
                             title={strings.destlocation}
                             description={destLoc}
-                            pinColor={'green'}
+                            pinColor={'#809c13'}
                         />
 
                         {
@@ -154,7 +154,7 @@ class Map extends Component {
                                 return (
                                     <Marker
                                     key={place.id}
-                                    pinColor={'blue'}
+                                    pinColor={'#ff9a00'}
                                     coordinate={{
                                         latitude: lat,
                                         longitude: lng
@@ -171,13 +171,13 @@ class Map extends Component {
                             apikey={GOOGLE_MAPS_APIKEY} 
                             mode="transit"
                             strokeWidth={5}
-                            strokeColor="green"
+                            strokeColor='#809c13'
                             optimizeWaypoints={true}
                             ourInputFunction={this.handleInputFunction}
                         />        
                     </MapView>
                 </View>
-                <View style={{ height: '50%', alignItems: 'center' }} >
+                <View style={{ height: '50%', alignItems: 'center', backgroundColor: '#fff9e0', borderRadius: 20 }} >
                     <View><Text>{ (this.state.currCoord !== null) ? this.state.currCoord.coords.latitude + ', ' + this.state.currCoord.coords.longitude : 'boş' }</Text></View>
                     <SwitchButton
                         onValueChange={(val) => this.setState({ activePage: val })}      // this is necessary for this component
@@ -189,9 +189,9 @@ class Map extends Component {
                         switchBorderRadius = {10}           // optional: switch border radius --- default oval
                         switchSpeedChange = {500}           // optional: button change speed --- default 100
                         switchBorderColor = '#d4d4d4'       // optional: switch border color --- default #d4d4d4
-                        switchBackgroundColor = '#fff'      // optional: switch background color --- default #fff
-                        btnBorderColor = '#00a4b9'          // optional: button border color --- default #00a4b9
-                        btnBackgroundColor = '#0f52ba'      // optional: button background color --- default #00bcd4
+                        switchBackgroundColor = 'white'      // optional: switch background color --- default #fff
+                        btnBorderColor = 'white'          // optional: button border color --- default #00a4b9
+                        btnBackgroundColor = '#00a6a6'      // optional: button background color --- default #00bcd4
                         fontColor = '#b1b1b1'               // optional: text font color --- default #b1b1b1
                         activeFontColor = '#fff'            // optional: active font color --- default #fff
                     />                

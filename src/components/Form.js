@@ -71,7 +71,7 @@ class Form extends Component {
     render() {
         return (
             <ImageBackground
-            source={require('../RouteFinder_SourceAssets/img/rfbckgrnd.jpg')}
+            source={require('../RouteFinder_SourceAssets/img/rfbkg.jpg')}
             style={{ width, height, alignItems: 'center', justifyContent: 'center' }}
             >
                 
