@@ -121,5 +121,3 @@ const styles = {
 };
 
 export default Form;
-
-//ios: AIzaSyC9zZfHLud2na91ugE1FrOv92qX2cbHvto 
